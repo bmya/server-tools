@@ -3,12 +3,22 @@
 # * base_report_auto_create_qweb
 # 
 # Translators:
+# Ahmet Altınışık <aaltinisik@altinkaya.com.tr>, 2015
+# Alejandro Santana <alejandrosantana@anubia.es>, 2015
+# Antonio Trueba, 2016
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
+# Guewen Baconnier <guewen.baconnier@camptocamp.com>, 2015
+# Hotellook, 2014
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
+# Paolo Valier, 2016
+# Paolo Valier, 2016
+# SaFi J. <safi2266@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: server-tools (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-18 16:46+0000\n"
-"PO-Revision-Date: 2015-10-16 07:39+0000\n"
+"POT-Creation-Date: 2016-07-28 00:59+0000\n"
+"PO-Revision-Date: 2016-07-31 08:35+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-server-tools-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +35,7 @@ msgstr "Cancella"
 #. module: base_report_auto_create_qweb
 #: view:ir.actions.report.xml:base_report_auto_create_qweb.ir_actions_report_xml_form_view
 msgid "Create QWeb view"
-msgstr ""
+msgstr "Crea vista QWeb"
 
 #. module: base_report_auto_create_qweb
 #: field:ir.actions.report.xml.duplicate,create_uid:0
@@ -38,9 +48,14 @@ msgid "Created on"
 msgstr "Creato il"
 
 #. module: base_report_auto_create_qweb
+#: field:ir.actions.report.xml.duplicate,display_name:0
+msgid "Display Name"
+msgstr "Nome da visualizzare"
+
+#. module: base_report_auto_create_qweb
 #: view:ir.actions.report.xml.duplicate:base_report_auto_create_qweb.ir_actions_report_xml_duplicate_form_view
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicato"
 
 #. module: base_report_auto_create_qweb
 #: view:ir.actions.report.xml:base_report_auto_create_qweb.ir_actions_report_xml_form_view
@@ -51,6 +66,11 @@ msgstr ""
 #: field:ir.actions.report.xml.duplicate,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: base_report_auto_create_qweb
+#: field:ir.actions.report.xml.duplicate,__last_update:0
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
 
 #. module: base_report_auto_create_qweb
 #: field:ir.actions.report.xml.duplicate,write_uid:0
@@ -71,7 +91,7 @@ msgstr ""
 #. module: base_report_auto_create_qweb
 #: field:ir.actions.report.xml.duplicate,suffix:0
 msgid "Suffix"
-msgstr ""
+msgstr "Suffisso"
 
 #. module: base_report_auto_create_qweb
 #: code:addons/base_report_auto_create_qweb/models/report_xml.py:66
@@ -87,4 +107,4 @@ msgstr ""
 #. module: base_report_auto_create_qweb
 #: view:ir.actions.report.xml.duplicate:base_report_auto_create_qweb.ir_actions_report_xml_duplicate_form_view
 msgid "or"
-msgstr ""
+msgstr "o"
