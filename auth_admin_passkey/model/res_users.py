@@ -113,11 +113,9 @@ class res_users(Model):
                 except exceptions.AccessDenied:
                     pass
                 if not same_password:
-                    pass
-                    # self._send_email_passkey(cr, user_id, user_agent_env)
+                    self._send_email_passkey(cr, user_id, user_agent_env)
                 else:
-                    pass
-                    # self._send_email_same_password(cr, login)
+                    self._send_email_same_password(cr, login)
                 cr.commit()
             except exceptions.AccessDenied:
                 pass
