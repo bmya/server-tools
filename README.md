@@ -27,13 +27,13 @@ addon | version | summary
 [auth_signup_verify_email](auth_signup_verify_email/) | 8.0.1.0.0 | Force uninvited users to use a good email for signup
 [auth_supplier](auth_supplier/) | 8.0.1.0.0 | Auth Supplier
 [auto_backup](auto_backup/) | 8.0.1.0.1 | Backups database
-[base_concurrency](base_concurrency/) | 8.0.1.0.0 | Base Concurrency
+[base_concurrency](base_concurrency/) | 8.0.1.1.0 | Base Concurrency
 [base_custom_info](base_custom_info/) | 8.0.1.0.0 | Add custom field in models
 [base_debug4all](base_debug4all/) | 8.0.1.0.0 | Shows full debug options for all users
-[base_export_manager](base_export_manager/) | 8.0.2.0.1 | Manage model export profiles
+[base_export_manager](base_export_manager/) | 8.0.2.1.0 | Manage model export profiles
 [base_external_dbsource](base_external_dbsource/) | 8.0.1.3.0 | External Database Sources
 [base_field_validator](base_field_validator/) | 8.0.1.0.0 | Validate fields using regular expressions
-[base_import_match](base_import_match/) | 8.0.1.0.0 | Try to avoid duplicates before importing
+[base_import_match](base_import_match/) | 8.0.1.0.1 | Try to avoid duplicates before importing
 [base_ir_filters_active](base_ir_filters_active/) | 8.0.1.0.0 | Allows you to disable (hide) filters
 [base_module_doc_rst](base_module_doc_rst/) | 8.0.1.0.0 | Modules Technical Guides in RST and Relationship Graphs
 [base_multi_image](base_multi_image/) | 8.0.2.0.0 | Allow multiple images for database objects
@@ -44,6 +44,8 @@ addon | version | summary
 [base_suspend_security](base_suspend_security/) | 8.0.1.0.0 | Suspend security checks for a call
 [base_user_gravatar](base_user_gravatar/) | 8.0.1.0.0 | Synchronize Gravatar image
 [base_user_reset_access](base_user_reset_access/) | 8.0.1.0.0 | Reset User Access Right
+[base_user_role](base_user_role/) | 8.0.1.1.0 | User roles
+[base_view_inheritance_extension](base_view_inheritance_extension/) | 8.0.1.0.0 | Adds more operators for view inheritance
 [cron_run_manually](cron_run_manually/) | 8.0.1.0.0 | Call cron jobs from their form view
 [database_cleanup](database_cleanup/) | 8.0.0.1.0 | Database cleanup
 [datetime_formatter](datetime_formatter/) | 8.0.1.0.0 | Helper functions to give correct format to date[time] fields
@@ -52,7 +54,7 @@ addon | version | summary
 [dead_mans_switch_server](dead_mans_switch_server/) | 8.0.1.0.0 | Be notified when customers' odoo instances go down
 [disable_openerp_online](disable_openerp_online/) | 8.0.1.1.0 | Remove odoo.com bindings
 [fetchmail_attach_from_folder](fetchmail_attach_from_folder/) | 8.0.1.0.1 | Attach mails in an IMAP folder to existing objects
-[fetchmail_notify_error_to_sender](fetchmail_notify_error_to_sender/) | 8.0.1.0.0 | If fetching mails gives error, send an email to sender
+[fetchmail_notify_error_to_sender](fetchmail_notify_error_to_sender/) | 8.0.1.0.1 | If fetching mails gives error, send an email to sender
 [field_char_transformed](field_char_transformed/) | 8.0.1.0.0 | Allows to transform input in character fields before writing or reading it to/from the database
 [field_rrule](field_rrule/) | 8.0.1.0.0 | Provides a field and widget for RRules according to RFC 2445
 [html_image_url_extractor](html_image_url_extractor/) | 8.0.1.0.0 | Extract images found in any HTML field
@@ -67,6 +69,7 @@ addon | version | summary
 [qweb_usertime](qweb_usertime/) | 8.0.1.0.0 | Add user time rendering support in QWeb
 [save_translation_file](save_translation_file/) | 8.0.1.0.0 | Allows developpers to easily generate i18n files
 [scheduler_error_mailer](scheduler_error_mailer/) | 8.0.1.0.0 | Send an e-mail when a scheduler fails
+[secure_uninstall](secure_uninstall/) | 8.0.1.0.0 | Ask password to authorize uninstall
 [server_environment](server_environment/) | 8.0.1.1.0 | server configuration environment files
 [server_environment_files_sample](server_environment_files_sample/) | 8.0.1.0.0 | Example server configuration environment files repository module
 [shell](shell/) | 8.0.1.0.0 | Backport of the v9 shell CLI command.
