@@ -1,6 +1,7 @@
 # © 2004-2009 Tiny SPRL (<http://tiny.be>).
 # © 2015 Agile Business Group <http://www.agilebg.com>
 # © 2016 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
+# © 2018 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import logging
@@ -90,6 +91,12 @@ class DbBackup(models.Model):
         ],
         default='zip',
         help="Choose the format for this backup."
+    )
+
+    frequency = fields.Selection(
+        (["daily", "Daily"], ["hourly", "Hourly"]),
+        default="daily",
+        help="How often this backup is ran."
     )
 
     @api.model
@@ -200,9 +207,13 @@ class DbBackup(models.Model):
         successful.cleanup()
 
     @api.model
-    def action_backup_all(self):
-        """Run all scheduled backups."""
-        return self.search([]).action_backup()
+    def action_backup_all(self, frequency="daily"):
+        """Run all scheduled backups.
+
+        :param str frequency: filter the type of db.backup that will be
+                              triggered
+        """
+        return self.search([("frequency", "=", frequency)]).action_backup()
 
     @api.multi
     @contextmanager
@@ -232,18 +243,21 @@ class DbBackup(models.Model):
         now = datetime.now()
         for rec in self.filtered("days_to_keep"):
             with rec.cleanup_log():
-                oldest = self.filename(now - timedelta(days=rec.days_to_keep))
+                bu_format = rec.backup_format
+                file_extension = bu_format == 'zip' and 'dump.zip' or bu_format
+                oldest = self.filename(now - timedelta(days=rec.days_to_keep),
+                                       bu_format)
 
                 if rec.method == "local":
                     for name in iglob(os.path.join(rec.folder,
-                                                   "*.dump.zip")):
+                                                   '*.%s' % file_extension)):
                         if os.path.basename(name) < oldest:
                             os.unlink(name)
 
                 elif rec.method == "sftp":
                     with rec.sftp_connection() as remote:
                         for name in remote.listdir(rec.folder):
-                            if (name.endswith(".dump.zip") and
+                            if (name.endswith('.%s' % file_extension) and
                                     os.path.basename(name) < oldest):
                                 remote.unlink('%s/%s' % (rec.folder, name))
 

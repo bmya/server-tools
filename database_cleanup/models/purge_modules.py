@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
-# © 2014-2016 Therp BV <http://therp.nl>
+# Copyright 2014-2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# pylint: disable=consider-merging-classes-inherited
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 from odoo.modules.module import get_module_path
@@ -63,15 +63,18 @@ class CleanupPurgeWizardModule(models.TransientModel):
     @api.model
     def find(self):
         res = []
+        purge_lines = self.env['cleanup.purge.line.module']
         for module in self.env['ir.module.module'].search([]):
             if get_module_path(module.name):
                 continue
             if module.state == 'uninstalled':
-                self.env['cleanup.purge.line.module'].create({
+                purge_lines += self.env['cleanup.purge.line.module'].create({
                     'name': module.name,
-                }).purge()
+                })
                 continue
             res.append((0, 0, {'name': module.name}))
+
+        purge_lines.purge()
 
         if not res:
             raise UserError(_('No modules found to purge'))

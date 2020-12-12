@@ -138,6 +138,11 @@ msgid "Duplicated property"
 msgstr ""
 
 #. module: database_cleanup
+#: selection:cleanup.purge.line.property,reason:0
+msgid "Empty default property"
+msgstr ""
+
+#. module: database_cleanup
 #: model:ir.model.fields,field_description:database_cleanup.field_cleanup_create_indexes_line_field_id
 msgid "Field"
 msgstr "Camp"
@@ -281,7 +286,7 @@ msgid "No dangling menu entries found"
 msgstr "No s'han trobat entrades de menú penjades"
 
 #. module: database_cleanup
-#: code:addons/database_cleanup/models/purge_modules.py:77
+#: code:addons/database_cleanup/models/purge_modules.py:80
 #, python-format
 msgid "No modules found to purge"
 msgstr "No s'han trobat mòduls per purgar"
@@ -293,7 +298,7 @@ msgid "No orphaned columns found"
 msgstr "No s'han trobat columnes orfes"
 
 #. module: database_cleanup
-#: code:addons/database_cleanup/models/purge_data.py:69
+#: code:addons/database_cleanup/models/purge_data.py:68
 #, python-format
 msgid "No orphaned data entries found"
 msgstr "No s'han trobat entrades de dades orfes"
@@ -481,7 +486,7 @@ msgid "Select lines"
 msgstr "Seleccionar línies"
 
 #. module: database_cleanup
-#: code:addons/database_cleanup/models/purge_wizard.py:73
+#: code:addons/database_cleanup/models/purge_wizard.py:74
 #, python-format
 msgid "Select lines to purge"
 msgstr "Seleccionar línies a purgar"
@@ -490,6 +495,11 @@ msgstr "Seleccionar línies a purgar"
 #: model:ir.model.fields,field_description:database_cleanup.field_cleanup_purge_wizard_table_purge_line_ids
 msgid "Tables to purge"
 msgstr "Taules a purgar"
+
+#. module: database_cleanup
+#: selection:cleanup.purge.line.property,reason:0
+msgid "Unknown model"
+msgstr ""
 
 #. module: database_cleanup
 #: model:ir.model.fields,field_description:database_cleanup.field_cleanup_create_indexes_line_wizard_id

@@ -65,6 +65,7 @@ class ExceptionRule(models.Model):
 #       base.exception line (ex rule_group = sale for sale order)
 #  - object: same as order or line, browse_record of the base.exception or
 #    base.exception line
+#  - obj: same as object
 #  - env: Odoo Environment (i.e. self.env)
 #  - time: Python time module
 #  - cr: database cursor
@@ -127,7 +128,8 @@ class BaseException(models.AbstractModel):
         action_data.update({
             'context': {
                 'active_id': self.ids[0],
-                'active_ids': self.ids
+                'active_ids': self.ids,
+                'active_model': self._name,
             }
         })
         return action_data
@@ -183,7 +185,10 @@ class BaseException(models.AbstractModel):
                 continue
             exception_ids = obj._detect_exceptions(
                 model_exceptions, sub_exceptions)
-            obj.exception_ids = [(6, 0, exception_ids)]
+            if set(obj.exception_ids.ids).symmetric_difference(
+                set(exception_ids)
+            ):
+                obj.exception_ids = [(6, 0, exception_ids)]
             all_exception_ids += exception_ids
         return all_exception_ids
 
@@ -195,7 +200,7 @@ class BaseException(models.AbstractModel):
                 'obj': rec,
                 'env': self.env,
                 'cr': self.env.cr,
-                'uid': self.env.user.id,
+                'uid': self.env.uid,
                 'user': self.env.user,
                 'time': time,
                 # copy context to prevent side-effects of eval
